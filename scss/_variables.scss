@@ -1,4 +1,4 @@
-@font-face {
+  @font-face {
     font-family: Vintage;
     src: url("../fonts/VINTAGE\ COLLEGE\ DEPT_worn.otf") format("truetype");
   }
@@ -14,5 +14,12 @@
   }
   
   $lemonMilk: "font-family", LemonMilk;
-  $Vintage: "font-family", Vintage;
+  $vintage: "font-family", Vintage;
   $smythe: "font-family", Smythe;
+
+
+  $colors:(
+    "dark_background": #1A2129,
+    "red_header": #FD695E,
+    "light_text": #E6E6E6,
+  )
