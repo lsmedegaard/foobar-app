@@ -1,0 +1,16 @@
+.fadeUp {
+  animation-name: fadeUpKF;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeUpKF {
+  50% {
+    transform: translateY(-150vw);
+  }
+  100% {
+    transform: translateY(-150vw);
+  }
+}

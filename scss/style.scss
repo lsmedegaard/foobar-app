@@ -1,56 +1,79 @@
-@use "../scss/variables.scss" as v;
-@use "../scss/reset.scss";
+@use "../scss/config.scss" as v;
+@use "../scss/classes.scss";
 
 @function color($color-name) {
-    @return map-get(v.$colors, $color-name);
-  }
+  @return map-get(v.$colors, $color-name);
+}
 
-  @mixin displayLogo{
-      font-size: 2.5em;
-      color: color(red_header);
-      font-family: v.$vintage;
-  }
-  @mixin flexCenter{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+@mixin displayLogo {
+  font-size: 2.5em;
+  color: color(red_header);
+  font-family: v.$vintage;
+}
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @mixin buttons{
-    all: unset;
-    border: 1px solid color(red_header);
-    border-radius: 5px;
-    color: color(red_header);
-    font-family: v.$lemonMilk;
-    padding: 10px;
-    cursor: pointer;
-  }
-
+@mixin buttons {
+  all: unset;
+  border: 1px solid color(red_header);
+  border-radius: 5px;
+  color: color(red_header);
+  font-family: v.$lemonMilk;
+  padding: 10px;
+  cursor: pointer;
+}
 
 body {
-    @include flexCenter();
-    height: 100vh;
-    background-color: color(dark_background);
-
+  background-color: color(dark_background);
 }
 
-.logo{
-    @include displayLogo();
-    .firstfade {
-        opacity: 20%;
-        margin-top: -65px;
-    }
-    .lastfade {
-        opacity: 5%;
-        margin-top: -65px;
-    }
+.subheader {
+  font-family: v.$lemonMilk;
+  color: color(red_header);
 }
 
-.buttonwrapper {
- .order_button {
+// FRONT PAGE
+.frontpage_sectionwrapper {
+  height: 100vh;
+  @include flexCenter();
+}
+
+.logo {
+  @include displayLogo();
+  .firstfade {
+    opacity: 20%;
+    margin-top: -65px;
+  }
+  .lastfade {
+    opacity: 5%;
+    margin-top: -65px;
+  }
+}
+
+.button_wrapper {
+  .order_button {
     @include buttons();
-    }
+  }
 }
 
+// ALL BEERS PAGE
+#top_section {
+  text-align: center;
+}
 
+.logo_all_beers {
+  @include displayLogo();
+  margin-bottom: 100px;
+  .firstfade {
+    opacity: 20%;
+    margin-top: -65px;
+  }
+  .lastfade {
+    opacity: 5%;
+    margin-top: -65px;
+  }
+}
