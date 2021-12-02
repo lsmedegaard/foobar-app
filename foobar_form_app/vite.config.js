@@ -1,3 +1,3 @@
 export default {
-  root: "pages",
+  root: "src",
 };

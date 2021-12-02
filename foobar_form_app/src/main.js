@@ -1,4 +1,4 @@
-import "../../scss/style.scss";
+import "./scss/style.scss";
 
 // const logo = document.querySelector(".logo, .button_wrapper");
 // const button = document.querySelector(".button_wrapper");
