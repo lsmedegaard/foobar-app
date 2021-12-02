@@ -60,6 +60,18 @@ a {
   @include subheaders();
 }
 
+.beer_name{
+  font-size: 1.8rem;
+  font-family: v.$smythe;
+  color: color(red_header);
+}
+
+p{
+  font-size: 1.2rem;
+  font-family: v.$smythe;
+  color: color(light_text);
+}
+
 
 
 // FRONT PAGE
@@ -250,14 +262,30 @@ a {
     flex-wrap: wrap;
   }
   
-  .imgwrapper{
+  .item-wrapper{
     width: 32%;
     margin: auto;
-  }
-
+  
   img {
     width: 150px;
     height: 150px;
   }
+
+  .beertxt{
+    display: grid;
+    grid-template-areas: 
+    ". ."
+    "bl br";
+
+    .beer_type{
+      grid-area: bl;
+    }
+
+    .price{
+      grid-area: br;
+      color: rgb(155, 255, 155);
+    }
+  }
+}
 }
 
