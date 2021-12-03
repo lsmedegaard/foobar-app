@@ -39,3 +39,4 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+

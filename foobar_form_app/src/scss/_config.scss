@@ -6,17 +6,17 @@
 
 @font-face {
   font-family: Vintage;
-  src: url("../fonts/VINTAGE\ COLLEGE\ DEPT_worn.otf") format("truetype");
+  src: url("/fonts/VINTAGE\ COLLEGE\ DEPT_worn.otf") format("truetype");
 }
 
 @font-face {
   font-family: LemonMilk;
-  src: url("../fonts/LemonMilk.otf") format("truetype");
+  src: url("/fonts/LemonMilk.otf") format("truetype");
 }
 
 @font-face {
   font-family: Smythe;
-  src: url("../fonts/Smythe-Regular.ttf") format("truetype");
+  src: url("/fonts/Smythe-Regular.ttf") format("truetype");
 }
 
 $lemonMilk: "font-family", LemonMilk;
