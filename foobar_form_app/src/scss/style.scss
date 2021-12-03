@@ -262,7 +262,8 @@ p {
 
   .item-wrapper {
     width: 32%;
-    margin: 0 auto;
+    margin: 0 auto 5vw auto;
+    box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 42%);
 
     .img-wrapper {
       width: 100%;
@@ -277,6 +278,7 @@ p {
       grid-template-areas:
         ". ."
         "bl br";
+        margin: 0 15px 15px 15px;
 
       .beer_type {
         grid-area: bl;
@@ -288,5 +290,31 @@ p {
         color: rgb(155, 255, 155);
       }
     }
+  }
+}
+
+
+
+#testsection{
+  display: grid;
+}
+
+.test-wrapper1,
+.test-wrapper2,
+.test-wrapper3{
+@include flexCenter();
+  img{
+  position: relative;
+  }
+  .beer_label{
+  width: 25vw;
+  height: auto;
+  left: 7vw;
+  } 
+  .pilsner{
+  width: 29vw;
+  height: auto;
+  top: 3vw;
+  left: -6vw;
   }
 }
