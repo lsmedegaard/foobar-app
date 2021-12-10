@@ -1,142 +1,148 @@
-@use "/scss/config.scss" as v;
+@use "/scss/config.scss"as v;
 @use "/scss/classes.scss";
 @import "/scss/mixins.scss";
 
 @function color($color-name) {
-    @return map-get(v.$colors, $color-name);
-  }
+  @return map-get(v.$colors, $color-name);
+}
 
 // MENU
 .menu-btn {
-    position: fixed;
-    z-index: 100;
-    right: 2rem;
-    top: 2rem;
-    height: 20px;
+  position: fixed;
+  z-index: 100;
+  right: 2rem;
+  top: 2rem;
+  height: 20px;
+  width: 50px;
+  cursor: pointer;
+  @include transition-ease;
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
     width: 50px;
-    cursor: pointer;
+    height: 2px;
+    background: rgb(255, 206, 206);
     @include transition-ease;
-  
-    &__burger {
+
+    &::before {
+      content: "";
       position: absolute;
-      right: 0;
-      top: 0.5rem;
+      top: -8px;
       width: 50px;
       height: 2px;
       background: rgb(255, 206, 206);
       @include transition-ease;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        top: -8px;
-        width: 50px;
-        height: 2px;
-        background: rgb(255, 206, 206);
-        @include transition-ease;
-      }
-  
-      &::after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        width: 50px;
-        height: 2px;
-        background: rgb(255, 206, 206);
-        @include transition-ease;
-      }
-  
-      &.open {
-        transform: rotate(180deg);
-        background: transparent;
-  
-        &::before {
-          transform: rotate(45deg) translate(5px, 8px);
-        }
-  
-        &::after {
-          width: 50px;
-          transform: rotate(-45deg) translate(3px, -7px);
-        }
-      }
     }
-  }
-  
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    opacity: 0.98;
-    visibility: hidden;
-  
-    a {
-      font-family: v.$lemonMilk;
-      color: color(dark_background);
-    }
-  
-    &.open {
-      visibility: visible;
-    }
-  
-    .menu-nav {
-      display: flex;
-      flex-flow: column wrap;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      background: color(red_header);
-      list-style-type: none;
-      padding-right: 1rem;
-      transform: translateY(-100%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 50px;
+      height: 2px;
+      background: rgb(255, 206, 206);
       @include transition-ease;
-  
-      &.open {
-        transform: translateY(0);
+    }
+
+    &.open {
+      transform: rotate(180deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
       }
-  
-      &__item {
-        transform: translateX(100vw);
-        @include transition-ease;
-  
-        &.open {
-          transform: translateX(0);
-        }
-  
-        &.active > a {
-          color: rgb(255, 206, 206);
-        }
-      }
-  
-      &__link {
-        display: inline-block;
-        font-size: 2rem;
-        text-transform: uppercase;
-        padding: 2rem 0;
-        font-weight: 300;
-        @include transition-ease;
-  
-        &:hover {
-          color: rgb(255, 206, 206);
-        }
+
+      &::after {
+        width: 50px;
+        transform: rotate(-45deg) translate(3px, -7px);
       }
     }
   }
-  
-  @for $i from 1 through 4 {
-    .menu-nav__item:nth-child(#{$i}) {
-      transition-delay: ($i * 0.1s) + 0.15s;
-    }
-  }
-  
-  .logo_menu {
-    @include displayLogo();
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.98;
+  visibility: hidden;
+
+  a {
+    font-family: v.$lemonMilk;
     color: color(dark_background);
-    .firstfade {
-      @include firstFade();
+  }
+
+  &.open {
+    visibility: visible;
+  }
+
+  .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: color(red_header);
+    list-style-type: none;
+    padding-right: 1rem;
+    transform: translateX(100vw);
+    transition: 1s;
+
+    &.open {
+      transform: translateX(0);
     }
-    .lastfade {
-      @include lastFade();
+
+    &__item {
+      opacity: 0;
+      transform: translateX(100vw);
+transition: .5s;
+
+      &.open {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &.active>a {
+        color: rgb(255, 206, 206);
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: 2rem;
+      text-transform: uppercase;
+      padding: 2rem 0;
+      font-weight: 300;
+      @include transition-ease;
+
+      &:hover {
+        color: rgb(255, 206, 206);
+      }
     }
   }
+}
+
+@for $i from 1 through 4 {
+  .menu-nav__item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.2s) + 0.2s;
+  }
+}
+
+.logo_menu {
+  @include displayLogo();
+  color: color(dark_background);
+
+
+  .firstfade {
+    @include firstFade();
+  }
+
+
+  .lastfade {
+    @include lastFade();
+  }
+}

@@ -41,6 +41,9 @@
     font-family: v.$lemonMilk;
     padding: 10px;
     cursor: pointer;
+    @include for-phone-only {
+      
+    }
   }
   
   @mixin firstFade {

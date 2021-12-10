@@ -6,22 +6,37 @@
   @return map-get(v.$colors, $color-name);
 }
 
+#helpmelogo {
+  text-align: center;
+}
+
 #helpme {
   text-align: center;
   margin-top: 10vh;
 }
 
+#helpme div {
+  margin-top: 2vw;
+}
+
 #helpme h2 {
   color: color(red_header);
+  font-family: "font-family", LemonMilk;
+  font-size: 2rem;
 }
 
 #helpme h3 {
   color: color(light_text);
 }
 
+#helpme p {
+  font-size: 1.5rem;
+}
+
 #helpcircle {
   background-color: yellow;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
+  margin: auto;
 }
