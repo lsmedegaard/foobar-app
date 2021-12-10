@@ -1,52 +1,17 @@
 @use "/scss/config.scss" as v;
 @use "/scss/classes.scss";
+@use "/scss/menu.scss";
+@import "/scss/mixins.scss";
 
 @function color($color-name) {
   @return map-get(v.$colors, $color-name);
 }
 
-@mixin displayLogo {
-  font-size: 2.5em;
-  color: color(red_header);
-  font-family: v.$vintage;
-}
-@mixin flexCenter {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-@mixin buttons {
-  all: unset;
-  border: 1px solid color(red_header);
-  border-radius: 5px;
-  color: color(red_header);
-  font-family: v.$lemonMilk;
-  padding: 10px;
-  cursor: pointer;
-}
-
-@mixin firstFade {
-  opacity: 20%;
-  margin-top: -50px;
-}
-
-@mixin lastFade {
-  opacity: 5%;
-  margin-top: -50px;
-}
-
-@mixin transition-ease {
-  transition: all 0.5s ease-in-out;
-}
-
-@mixin subheaders {
-  font-family: v.$lemonMilk;
-  color: color(red_header);
-}
-
 //  GENERAL
+*{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: color(dark_background);
 }
@@ -94,140 +59,7 @@ p {
   }
 }
 
-// MENU
-.menu-btn {
-  position: fixed;
-  z-index: 100;
-  right: 2rem;
-  top: 2rem;
-  height: 20px;
-  width: 50px;
-  cursor: pointer;
-  @include transition-ease;
 
-  &__burger {
-    position: absolute;
-    right: 0;
-    top: 0.5rem;
-    width: 50px;
-    height: 2px;
-    background: rgb(255, 206, 206);
-    @include transition-ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -8px;
-      width: 50px;
-      height: 2px;
-      background: rgb(255, 206, 206);
-      @include transition-ease;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      width: 50px;
-      height: 2px;
-      background: rgb(255, 206, 206);
-      @include transition-ease;
-    }
-
-    &.open {
-      transform: rotate(180deg);
-      background: transparent;
-
-      &::before {
-        transform: rotate(45deg) translate(5px, 8px);
-      }
-
-      &::after {
-        width: 50px;
-        transform: rotate(-45deg) translate(3px, -7px);
-      }
-    }
-  }
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  opacity: 0.98;
-  visibility: hidden;
-
-  a {
-    font-family: v.$lemonMilk;
-    color: color(dark_background);
-  }
-
-  &.open {
-    visibility: visible;
-  }
-
-  .menu-nav {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    background: color(red_header);
-    list-style-type: none;
-    padding-right: 1rem;
-    transform: translateY(-100%);
-    @include transition-ease;
-
-    &.open {
-      transform: translateY(0);
-    }
-
-    &__item {
-      transform: translateX(100vw);
-      @include transition-ease;
-
-      &.open {
-        transform: translateX(0);
-      }
-
-      &.active > a {
-        color: rgb(255, 206, 206);
-      }
-    }
-
-    &__link {
-      display: inline-block;
-      font-size: 2rem;
-      text-transform: uppercase;
-      padding: 2rem 0;
-      font-weight: 300;
-      @include transition-ease;
-
-      &:hover {
-        color: rgb(255, 206, 206);
-      }
-    }
-  }
-}
-
-@for $i from 1 through 4 {
-  .menu-nav__item:nth-child(#{$i}) {
-    transition-delay: ($i * 0.1s) + 0.15s;
-  }
-}
-
-.logo_menu {
-  @include displayLogo();
-  color: color(dark_background);
-  .firstfade {
-    @include firstFade();
-  }
-  .lastfade {
-    @include lastFade();
-  }
-}
 
 // ALL BEERS PAGE
 #top_section {

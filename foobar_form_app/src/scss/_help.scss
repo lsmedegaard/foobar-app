@@ -1,0 +1,7 @@
+@use "/scss/config.scss" as v;
+@use "/scss/classes.scss";
+@import "/scss/mixins.scss";
+
+@function color($color-name) {
+    @return map-get(v.$colors, $color-name);
+  }
