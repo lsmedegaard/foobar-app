@@ -1,7 +1,27 @@
-@use "/scss/config.scss" as v;
+@use "/scss/config.scss"as v;
 @use "/scss/classes.scss";
 @import "/scss/mixins.scss";
 
 @function color($color-name) {
-    @return map-get(v.$colors, $color-name);
-  }
+  @return map-get(v.$colors, $color-name);
+}
+
+#helpme {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+#helpme h2 {
+  color: color(red_header);
+}
+
+#helpme h3 {
+  color: color(light_text);
+}
+
+#helpcircle {
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}

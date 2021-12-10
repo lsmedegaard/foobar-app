@@ -1,15 +1,7 @@
 import "./scss/style.scss";
 
-// const logo = document.querySelector(".logo, .button_wrapper");
-// const button = document.querySelector(".button_wrapper");
-
-// document.querySelector(".order_button").addEventListener("click", () => {
-//   logo.classList.add("fadeUp");
-//   button.classList.add("fadeUp");
-// });
-
-// logo.addEventListener("animationend", () => {
-//   window.location.href = "beer_form.html";
+// window.addEventListener("DOMContentLoaded", () => {
+//   document.querySelector("body").classList.remove("preload");
 // });
 
 const menuBtn = document.querySelector(".menu-btn");
@@ -39,4 +31,3 @@ function toggleMenu() {
     showMenu = false;
   }
 }
-
