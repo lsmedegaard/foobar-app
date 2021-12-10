@@ -126,7 +126,8 @@ const cart = [];
 
 function addToCart() {
   console.log("adding to cart");
-  cart.push(this);
+  // cart.push(this.parentElement.parentElement.content.cloneNode(true));
+  // cart.push(this.parentElement.parentElement.querySelector("item-wrapper").content.cloneNode(true));
   console.log(cart);
 }
 
