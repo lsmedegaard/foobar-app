@@ -295,26 +295,26 @@ p {
 
 
 
-#testsection{
-  display: grid;
-}
+// #testsection{
+//   display: grid;
+// }
 
-.test-wrapper1,
-.test-wrapper2,
-.test-wrapper3{
-@include flexCenter();
-  img{
-  position: relative;
-  }
-  .beer_label{
-  width: 25vw;
-  height: auto;
-  left: 7vw;
-  } 
-  .pilsner{
-  width: 29vw;
-  height: auto;
-  top: 3vw;
-  left: -6vw;
-  }
-}
+// .test-wrapper1,
+// .test-wrapper2,
+// .test-wrapper3{
+// @include flexCenter();
+//   img{
+//   position: relative;
+//   }
+//   .beer_label{
+//   width: 25vw;
+//   height: auto;
+//   left: 7vw;
+//   } 
+//   .pilsner{
+//   width: 29vw;
+//   height: auto;
+//   top: 3vw;
+//   left: -6vw;
+//   }
+// }
