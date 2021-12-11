@@ -98,7 +98,7 @@ function toggleMenu() {
 }
 
 
-
+let cart = JSON.parse(localStorage.getItem('cart'))
 
 handleBeers();
 
@@ -114,21 +114,24 @@ function handleBeers() {
 function displayBeer(beer) {
   // create clone
   const clone = document.querySelector("template").content.cloneNode(true);
-
   // set clone data
   clone.querySelector("img").src = beer.img;
   clone.querySelector(".beer_name").textContent = beer.name;
   clone.querySelector(".beer_type").textContent = beer.type;
   clone.querySelector(".price").textContent = beer.price + "kr";
-  clone.querySelector('#add').addEventListener('click', addToCart);
-  clone.querySelector('#add').setAttribute('data-name', beer.name)
-  clone.querySelector('#remove').setAttribute('data-name', beer.name)
-  // clone.querySelector('#remove').addEventListener('click', removeFromCart)
+  // clone.querySelector('.quantity').textContent = JSON.parse(localStorage.getItem('cart'));
+  const quantity = clone.querySelector('.quantity')
+  quantity.textContent = cart[beer.name] + ' pc.'
 
+  clone.querySelector('#remove').addEventListener("click", () => {
+    cart[beer.name] === 0 ? cart[beer.name] = 0 : cart[beer.name] = cart[beer.name] - 1
+    quantity.textContent = cart[beer.name] + ' x ' + beer.name
+    localStorage.setItem('cart', JSON.stringify(cart))
+  })
 
-  clone.querySelector('#remove').addEventListener("click", (event) => {
-    let item = event.target.getAttribute('data-name')
-    cart[item] === 0 ? cart[item] = 0 : cart[item] = cart[item] - 1
+  clone.querySelector('#add').addEventListener("click", () => {
+    cart[beer.name] = cart[beer.name] + 1
+    quantity.textContent = cart[beer.name] + ' x ' + beer.name
     localStorage.setItem('cart', JSON.stringify(cart))
   })
   
@@ -137,19 +140,11 @@ function displayBeer(beer) {
   document.querySelector(".beers_container ul").appendChild(clone);
 }
 
-let cart = JSON.parse(localStorage.getItem('cart'))
+
 
 if (!cart) {
   cart = {}
   beers.forEach(beer => cart[beer.name] = 0)
-}
-
-function addToCart(event) {
-    let item = event.target.getAttribute('data-name')
-    cart[item] = cart[item] + 1
-    localStorage.setItem('cart', JSON.stringify(cart))
-  // cart.push(this.parentElement.parentElement.content.cloneNode(true));
-  // cart.push(this.parentElement.parentElement.querySelector("item-wrapper").content.cloneNode(true));
 }
 
 // function removeFromCart(event) {
@@ -158,3 +153,6 @@ function addToCart(event) {
 // }
 
 function displayCart() {}
+
+document.body.style.display = 'block'
+//https://stackoverflow.com/questions/4172281/force-browsers-to-load-css-before-showing-the-page
