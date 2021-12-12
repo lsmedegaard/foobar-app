@@ -99,7 +99,7 @@
     &__item {
       opacity: 0;
       transform: translateX(100vw);
-transition: .5s;
+      transition: .5s;
 
       &.open {
         opacity: 1;

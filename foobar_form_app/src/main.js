@@ -120,16 +120,16 @@ function displayBeer(beer) {
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);
+  function addToCart() {
+    console.log("adding to cart");
+    // let thisBeer = this.parentElement.parentElement;
+    // cart.push(thisBeer.content.cloneNode(true));
+    // cart.push(this.parentElement.parentElement.querySelector("item-wrapper").content.cloneNode(true));
+    console.log(cart);
+  }
 }
 
 const cart = [];
-
-function addToCart() {
-  console.log("adding to cart");
-  // cart.push(this.parentElement.parentElement.content.cloneNode(true));
-  // cart.push(this.parentElement.parentElement.querySelector("item-wrapper").content.cloneNode(true));
-  console.log(cart);
-}
 
 function removeFromCart() {}
 

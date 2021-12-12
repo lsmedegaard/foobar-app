@@ -146,8 +146,8 @@ p {
       grid-template-areas:
         "name name"
         "bl br"
-        "button .";
-      margin: 0 15px 15px 15px;
+        "button price";
+      margin: 25px 15px;
 
       .beer_name {
         grid-area: name;
@@ -158,7 +158,7 @@ p {
       }
 
       .price {
-        grid-area: br;
+        grid-area: price;
         text-align: end;
         color: rgb(155, 255, 155);
       }
@@ -169,6 +169,7 @@ p {
         font-size: .4rem;
         padding: 5px 0;
         grid-area: button;
+        width: 50%;
       }
     }
   }
