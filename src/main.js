@@ -121,7 +121,7 @@ function displayBeer(beer) {
   clone.querySelector(".price").textContent = beer.price + "kr";
   // clone.querySelector('.quantity').textContent = JSON.parse(localStorage.getItem('cart'));
   const quantity = clone.querySelector('.quantity')
-  quantity.textContent = cart[beer.name] + ' pc.'
+  
 
   clone.querySelector('#remove').addEventListener("click", () => {
     cart[beer.name] === 0 ? cart[beer.name] = 0 : cart[beer.name] = cart[beer.name] - 1

@@ -150,7 +150,7 @@ p {
       }
 
       .price {
-        grid-area: br;
+        grid-area: price;
         text-align: end;
         color: rgb(155, 255, 155);
       }
@@ -161,6 +161,7 @@ p {
         font-size: 0.4rem;
         padding: 5px 0;
         grid-area: button;
+        width: 50%;
       }
       #remove {
         @include buttons();
