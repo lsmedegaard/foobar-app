@@ -1,4 +1,4 @@
-@use "/scss/config.scss"as v;
+@use "/scss/config.scss" as v;
 @use "/scss/classes.scss";
 @import "/scss/mixins.scss";
 
@@ -67,8 +67,9 @@
   top: 0;
   left: 0;
   width: 100vw;
-  opacity: 0.98;
+  opacity: 1;
   visibility: hidden;
+  z-index: 99;
 
   a {
     font-family: v.$lemonMilk;
@@ -99,14 +100,14 @@
     &__item {
       opacity: 0;
       transform: translateX(100vw);
-      transition: .5s;
+      transition: 0.5s;
 
       &.open {
         opacity: 1;
         transform: translateX(0);
       }
 
-      &.active>a {
+      &.active > a {
         color: rgb(255, 206, 206);
       }
     }
@@ -136,11 +137,9 @@
   @include displayLogo();
   color: color(dark_background);
 
-
   .firstfade {
     @include firstFade();
   }
-
 
   .lastfade {
     @include lastFade();

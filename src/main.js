@@ -1,73 +1,65 @@
 import "./scss/style.scss";
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   document.querySelector("body").classList.remove("preload");
-// });
+window.addEventListener("DOMContentLoaded", () => {
+  // get();
+});
 
-const beers = [
-  {
-    name: "Row 26",
-    price: 35,
-    img: "/assets/images/row26.png",
-    type: "Stout",
-  },
+import beers from "./beers.js";
 
-  {
-    name: "Ruined childhood",
-    price: 40,
-    img: "/assets/images/ruinedchildhood.png",
-    type: "Porter",
-  },
+const tableURL = "https://foobar-cc0c.restdb.io/rest/foobar";
+const tableAPI = "7d223e20e3acb3ae5dda5fa92caf738b8c540";
 
-  {
-    name: "Fairytale Ale",
-    price: 35,
-    img: "/assets/images/fairytaleale.png",
-    type: "Ale",
-  },
-  {
-    name: "Githop",
-    price: 40,
-    img: "/assets/images/githop.png",
-    type: "Ale",
-  },
-  {
-    name: "Hoppily Ever After",
-    price: 50,
-    img: "/assets/images/hoppilyeverafter.png",
-    type: "Belgian IPA",
-  },
-  {
-    name: "Mowintime",
-    price: 35,
-    img: "/assets/images/mowintime.png",
-    type: "Pilsner",
-  },
-  {
-    name: "El Hefe",
-    price: 35,
-    img: "/assets/images/elhefe.png",
-    type: "Wheat beer",
-  },
-  {
-    name: "Hollaback",
-    price: 40,
-    img: "/assets/images/hollaback.png",
-    type: "Lager",
-  },
-  {
-    name: "Sleighride",
-    price: 40,
-    img: "/assets/images/sleighride.png",
-    type: "Porter",
-  },
-  {
-    name: "Steampunk",
-    price: 50,
-    img: "./assets/images/steampunk.png",
-    type: "IPA",
-  },
-];
+/* function get() {
+  fetch(tableURL, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": tableAPI,
+      "cache-control": "no-cache",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+} */
+/* 
+function randomTable() {
+  let randTable = Math.floor(Math.random() * 10) + 1;
+  console.log(`Table nr: ${randTable}`);
+  document.querySelector("#helpcircle").addEventListener("click", () => {
+    // Post current table number to restdb
+    const postData = JSON.stringify(randTable);
+    fetch(tableURL, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": tableAPI,
+        "cache-control": "no-cache",
+      },
+      body: postData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        get();
+      });
+  });
+  } */
+function randomTable() {
+  const data = { tableid: Math.floor(Math.random() * 10) + 1 };
+  const postData = JSON.stringify(data);
+  fetch("https://foobar-cc0c.restdb.io/rest/foobar", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "61b71e3fa3fedd557f8e0abd",
+      "cache-control": "no-cache",
+    },
+    body: postData,
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
 
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -97,11 +89,9 @@ function toggleMenu() {
   }
 }
 
-
-let cart = JSON.parse(localStorage.getItem('cart'))
+let cart = JSON.parse(localStorage.getItem("cart"));
 
 handleBeers();
-
 
 //create array of beers with properies
 //display each beer - "displayBeer(beer)"
@@ -120,31 +110,27 @@ function displayBeer(beer) {
   clone.querySelector(".beer_type").textContent = beer.type;
   clone.querySelector(".price").textContent = beer.price + "kr";
   // clone.querySelector('.quantity').textContent = JSON.parse(localStorage.getItem('cart'));
-  const quantity = clone.querySelector('.quantity')
-  
+  const quantity = clone.querySelector(".quantity");
 
-  clone.querySelector('#remove').addEventListener("click", () => {
-    cart[beer.name] === 0 ? cart[beer.name] = 0 : cart[beer.name] = cart[beer.name] - 1
-    quantity.textContent = cart[beer.name] + ' x ' + beer.name
-    localStorage.setItem('cart', JSON.stringify(cart))
-  })
+  clone.querySelector("#remove").addEventListener("click", () => {
+    cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
+    quantity.textContent = cart[beer.name] + " " + "x";
+    localStorage.setItem("cart", JSON.stringify(cart));
+  });
 
-  clone.querySelector('#add').addEventListener("click", () => {
-    cart[beer.name] = cart[beer.name] + 1
-    quantity.textContent = cart[beer.name] + ' x ' + beer.name
-    localStorage.setItem('cart', JSON.stringify(cart))
-  })
-  
+  clone.querySelector("#add").addEventListener("click", () => {
+    cart[beer.name] = cart[beer.name] + 1;
+    quantity.textContent = cart[beer.name] + " " + "x";
+    localStorage.setItem("cart", JSON.stringify(cart));
+  });
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);
 }
 
-
-
 if (!cart) {
-  cart = {}
-  beers.forEach(beer => cart[beer.name] = 0)
+  cart = {};
+  beers.forEach((beer) => (cart[beer.name] = 0));
 }
 
 // function removeFromCart(event) {
@@ -152,7 +138,23 @@ if (!cart) {
 //   console.log(cart)
 // }
 
-function displayCart() {}
-
-document.body.style.display = 'block'
+document.body.style.display = "block";
 //https://stackoverflow.com/questions/4172281/force-browsers-to-load-css-before-showing-the-page
+
+const toggle = document.querySelector(".toggle input");
+var element = document.body;
+
+toggle.addEventListener("click", () => {
+  const onOff = toggle.parentNode.querySelector(".onoff");
+
+  onOff.textContent = toggle.checked ? "Lightmode" : "Darkmode";
+  onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
+  onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
+});
+
+/* function myToggle() {
+  var element = document.body;
+  element.classList.add("light-mode");
+  element.classList.add("dark-mode");
+}
+ */

@@ -9,6 +9,13 @@
 
   <body style="display: none">
     <header>
+
+      <label class="toggle">
+        <span class="onoff">Switch mode</span>
+        <input type="checkbox"/>
+        <span class="slider round"></span>
+      </label>
+
       <div class="menu-btn">
         <span class="menu-btn__burger"></span>
       </div>
@@ -25,7 +32,7 @@
             </div>
           </li>
           <li class="menu-nav__item active">
-            <a href="beer_form.html" class="menu-nav__link"> Beers </a>
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
           </li>
           <li class="menu-nav__item">
             <a href="cart.html" class="menu-nav__link"> My Order </a>
@@ -37,6 +44,7 @@
       </nav>
     </header>
 
+    
     <div id="app"></div>
     <section class="frontpage_sectionwrapper">
       <div class="logo">
@@ -78,8 +86,10 @@
                 <h3 class="beer_name"></h3>
                 <p class="beer_type"></p>
                 <p class="price"></p>
-                <button id="add">+ Add</button>
-                <button id="remove">- Remove</button>
+                <div class='buttons_container'>
+                  <button id="add">+</button>
+                  <button id="remove">-</button>
+                </div>
                 <p class="quantity"></p>
               </div>
             </div>

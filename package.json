@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:3000",
   "name": "foobar_form_app",
   "version": "0.0.0",
   "scripts": {

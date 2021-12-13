@@ -3,3 +3,57 @@
 @use "/scss/menu.scss";
 @use "/scss/help.scss";
 @import "/scss/mixins.scss";
+
+@function color($color-name) {
+  @return map-get(v.$colors, $color-name);
+}
+
+h3 {
+  color: color(red_header);
+  font-family: v.$lemonMilk;
+  margin-left: 6vw;
+}
+
+.order_list {
+  height: auto;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6vw;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "name price"
+    "add re";
+  margin-bottom: 4vw;
+
+  justify-content: space-between;
+  .beer_name {
+    grid-area: name;
+  }
+  .price {
+    color: rgb(155, 255, 155);
+  }
+
+  button {
+    @include buttons();
+    width: 2vw;
+    height: auto;
+    text-align: center;
+  }
+}
+
+.total_container {
+  display: flex;
+  margin-top: 2vw;
+  a {
+    @include buttons();
+    margin-left: 30vw;
+    margin-bottom: 5vw;
+    @include for-tablet-portrait-up {
+      margin-left: 35vw;
+    }
+  }
+}
