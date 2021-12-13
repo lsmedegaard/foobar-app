@@ -280,4 +280,8 @@ input:checked + .slider:before {
   .slider:before {
     background-color: color(light_text);
   }
+
+  .price {
+    color: pink;
+  }
 }
