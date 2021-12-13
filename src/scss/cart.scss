@@ -39,9 +39,6 @@ h3 {
 
   button {
     @include buttons();
-    width: 2vw;
-    height: auto;
-    text-align: center;
   }
 }
 

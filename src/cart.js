@@ -80,3 +80,14 @@ function displaybeer() {
   });
 }
 document.body.style.display = "block";
+
+const toggle = document.querySelector(".toggle input");
+var element = document.body;
+
+toggle.addEventListener("click", () => {
+  const onOff = toggle.parentNode.querySelector(".onoff");
+
+  onOff.textContent = toggle.checked ? "Lightmode" : "Darkmode";
+  onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
+  onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
+});

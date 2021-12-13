@@ -45,21 +45,6 @@ function randomTable() {
       });
   });
   } */
-function randomTable() {
-  const data = { tableid: Math.floor(Math.random() * 10) + 1 };
-  const postData = JSON.stringify(data);
-  fetch("https://foobar-cc0c.restdb.io/rest/foobar", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "61b71e3fa3fedd557f8e0abd",
-      "cache-control": "no-cache",
-    },
-    body: postData,
-  })
-    .then((res) => res.json())
-    .then((data) => console.log(data));
-}
 
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -114,13 +99,13 @@ function displayBeer(beer) {
 
   clone.querySelector("#remove").addEventListener("click", () => {
     cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
-    quantity.textContent = cart[beer.name] + " " + "x";
+    quantity.textContent = " " + "x" + cart[beer.name];
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
   clone.querySelector("#add").addEventListener("click", () => {
     cart[beer.name] = cart[beer.name] + 1;
-    quantity.textContent = cart[beer.name] + " " + "x";
+    quantity.textContent = "x" + cart[beer.name];
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
