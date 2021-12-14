@@ -74,7 +74,7 @@ function displaybeer() {
       totalSum.textContent = total + " " + "kr" + " " + "pay";
     });
 
-    totalSum.textContent = total + " " + "pay";
+    totalSum.textContent = total + " " + "kr" + " " + "pay";
 
     document.querySelector(".order_list").appendChild(clone);
   });
@@ -96,6 +96,8 @@ document.querySelector(".card").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";
   document.querySelector(".cash").style.display = "none";
   document.querySelector(".card_container").style.display = "block";
+  document.querySelector('form').classList.remove('hide')
+  document.querySelector('.card').style.display = "none";
 });
 document.querySelector(".mp").addEventListener("click", () => {
   document.querySelector(".card").style.display = "none";
@@ -106,3 +108,5 @@ document.querySelector(".cash").addEventListener("click", () => {
   document.querySelector(".card").style.display = "none";
   document.querySelector(".cash-response").textContent = "Please go to the bar with your table nummer and pay";
 });
+
+document.body.style.display = "block";

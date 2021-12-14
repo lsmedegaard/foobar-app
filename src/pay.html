@@ -60,12 +60,20 @@
     </div>
     <div class="card_container">
     </div>
-    <form>
-      <input id="number" type="text" name="number" />
-      <input id="expiry" type="text" name="expiry"  />
-      <input id="cvc" type="text" name="cvc"  />
-      <input id="name" type="text" name="name"  />
-  </form>
+    <form class="hide"> 
+      <input id="name" type="text" name="name"  placeholder="Name on card"/>
+      <input id="number" type="text" name="number" placeholder="13-16 digit cardnumber" pattern='/^([0-9]{4}( |\-)){3}[0-4]{4}$/'/>
+ 
+      <input id="expiry" type="text" name="expiry" placeholder="expiration date-00/0000"  />
+      <input id="cvc" type="text" name="cvc" placeholder="CVC" />
+      <div class="submit_container">
+        <button type="submit" id="submit">Pay</button>
+      </div>
+    </form>
+
+    <div id="back_wrapper">
+      <button id="back" onclick="history.back()">Go Back</button>
+    </div>
     <script type="module" src="/cart.js"></script>
     <script type="module" src="/payment.js"></script>
   </body>

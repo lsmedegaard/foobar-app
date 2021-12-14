@@ -67,7 +67,7 @@ h3 {
     flex-direction: row;
     justify-content: center;
     gap: 3vw;
-    
+
     .card {
       width: 30vw;
       height: auto;
@@ -85,4 +85,66 @@ h3 {
 
 .card_container {
   display: none;
+  margin-bottom: 4vw;
+}
+
+form {
+  display: grid;
+  grid-gap: 1vw;
+  margin-bottom: 5vw;
+  grid-template-areas:
+    "number x"
+    "name x"
+    "exp cvc";
+  .number {
+    grid-area: number;
+  }
+  .name {
+    grid-area: name;
+  }
+  .expiry {
+    grid-area: exp;
+  }
+  .cvc {
+    grid-area: cvc;
+  }
+  .submit_container {
+    width: 100%;
+  }
+}
+button[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#back_wrapper {
+  display: flex;
+  justify-content: center;
+  #back {
+    @include buttons();
+  }
+}
+
+.jp-card:not(.jp-card-identified) .jp-card-front,
+.jp-card:not(.jp-card-identified) .jp-card-back {
+  background: #adadad !important;
+}
+
+.hide {
+  display: "none";
 }
