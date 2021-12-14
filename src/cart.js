@@ -91,3 +91,18 @@ toggle.addEventListener("click", () => {
   onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
   onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
 });
+
+document.querySelector(".card").addEventListener("click", () => {
+  document.querySelector(".mp").style.display = "none";
+  document.querySelector(".cash").style.display = "none";
+  document.querySelector(".card_container").style.display = "block";
+});
+document.querySelector(".mp").addEventListener("click", () => {
+  document.querySelector(".card").style.display = "none";
+  document.querySelector(".cash").style.display = "none";
+});
+document.querySelector(".cash").addEventListener("click", () => {
+  document.querySelector(".mp").style.display = "none";
+  document.querySelector(".card").style.display = "none";
+  document.querySelector(".cash-response").textContent = "Please go to the bar with your table nummer and pay";
+});

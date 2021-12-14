@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
-    <script type="module" src="/main.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <label class="toggle">
+        <span class="onoff">Switch mode</span>
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <div class="logo_menu">
+              <h1 class="title">
+                FOO BAR
+                <div class="firstfade">FOO BAR</div>
+                <div class="lastfade">FOO BAR</div>
+              </h1>
+            </div>
+          </li>
+          <li class="menu-nav__item">
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
+          </li>
+          <li class="menu-nav__item active">
+            <a href="cart.html" class="menu-nav__link"> My Order </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="help.html" class="menu-nav__link"> Help </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="logo">
+      <h1 class="title">
+        FOO BAR
+        <div class="firstfade">FOO BAR</div>
+        <div class="lastfade">FOO BAR</div>
+      </h1>
+    </div>
+    <div class="payment_container">
+      <h1>Choose a payment type</h1>
+      <div class="icon_container">
+        <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="" />
+        <img class="mp" src="/assets/images/mp.svg" alt="" />
+        <img class="cash" src="/assets/images/money-bill-wave-solid.svg" alt="" />
+        <p class="cash_response"></p>
+      </div>
+    </div>
+    <div class="card_container">
+      <form>
+        <input type="text" id="cardName" name="CardName" placeholder="Harry Potter" />
+        <label for="cardName"></label>
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444" />
+        <label for="cardnumber"></label>
+
+        <div class="row">
+          <div class="col-50">
+            <label for="expyear">Exp Year</label>
+            <input type="text" id="expyear" name="expyear" placeholder="2018" />
+          </div>
+          <div class="col-50">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="352" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="/cart.js"></script>
+  </body>
 </html>

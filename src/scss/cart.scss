@@ -54,3 +54,35 @@ h3 {
     }
   }
 }
+
+.payment_container {
+  text-align: center;
+  h1 {
+    color: color(red_header);
+    font-family: v.$lemonMilk;
+    margin-bottom: 5vw;
+  }
+  .icon_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3vw;
+    
+    .card {
+      width: 30vw;
+      height: auto;
+    }
+    .mp {
+      width: 30vw;
+      height: auto;
+    }
+    .cash {
+      width: 30vw;
+      height: auto;
+    }
+  }
+}
+
+.card_container {
+  display: none;
+}

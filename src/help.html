@@ -7,15 +7,14 @@
     <title>Help</title>
   </head>
 
-  <body>
+  <body style="display: none">
     <header>
-
       <label class="toggle">
         <span class="onoff">Switch mode</span>
-        <input type="checkbox"/>
+        <input type="checkbox" />
         <span class="slider round"></span>
       </label>
-    
+
       <div class="menu-btn">
         <span class="menu-btn__burger"></span>
       </div>
@@ -32,7 +31,7 @@
             </div>
           </li>
           <li class="menu-nav__item">
-            <a href="index.html" class="menu-nav__link"> Beers </a>
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
           </li>
           <li class="menu-nav__item">
             <a href="cart.html" class="menu-nav__link"> My Order </a>
@@ -44,20 +43,28 @@
       </nav>
     </header>
 
-      <div class="logo">
-        <h1 class="title">
-          FOO BAR
-          <div class="firstfade">FOO BAR</div>
-          <div class="lastfade">FOO BAR</div>
-        </h1>
-      </div>
+    <div class="logo">
+      <h1 class="title">
+        FOO BAR
+        <div class="firstfade">FOO BAR</div>
+        <div class="lastfade">FOO BAR</div>
+      </h1>
+    </div>
 
     <section id="helpme">
-      <div>
+      <div id="helpwrapper">
         <h2>NEED HELP?</h2>
-        <p>Press this button to summon a waiter</p>
+        <p class="pressBtnTxt">Press this button to summon a waiter</p>
+        <p class="waitMessage hide">Please wait ..</p>
       </div>
       <div id="helpcircle"></div>
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section id="instructions">
       <div id="howtoorder">
         <h2>HOW TO ORDER</h2>
         <p>1. Select beers</p>
@@ -66,7 +73,6 @@
         <p>Enjoy!</p>
       </div>
     </section>
-
 
     <script type="module" src="/help.js"></script>
     <script type="module" src="/main.js"></script>

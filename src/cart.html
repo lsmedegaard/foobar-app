@@ -7,11 +7,11 @@
     <title>Cart</title>
   </head>
 
-  <body>
+  <body style="display: none">
     <header>
       <label class="toggle">
         <span class="onoff">Switch mode</span>
-        <input type="checkbox"/>
+        <input type="checkbox" />
         <span class="slider round"></span>
       </label>
       <div class="menu-btn">
@@ -41,21 +41,21 @@
         </ul>
       </nav>
     </header>
-  <main>
-    <div class="logo">
-      <h1 class="title">
-        FOO BAR
-        <div class="firstfade">FOO BAR</div>
-        <div class="lastfade">FOO BAR</div>
-      </h1>
-    </div>
+    <main>
+      <div class="logo">
+        <h1 class="title">
+          FOO BAR
+          <div class="firstfade">FOO BAR</div>
+          <div class="lastfade">FOO BAR</div>
+        </h1>
+      </div>
 
-    <h3>Order list:</h3>
-    <div class="order_list">
-      <hr> 
-    </div>
+      <h3>Order list:</h3>
+      <div class="order_list">
+        <hr />
+      </div>
 
-    <template>
+      <template>
         <div class="container">
           <p class="beer_name"></p>
           <p class="price"></p>
@@ -64,15 +64,16 @@
             <button id="remove">-</button>
           </div>
         </div>
-        <hr>
+        <hr />
         <!-- <button id="add">+ Add</button>
         <button id="remove">- Remove</button> -->
-    </template>
+      </template>
 
-    <div class="total_container">
-      <a href='pay.html' id="total"></a>
-    </div>
-  </main>
+      <div class="total_container">
+        <a href="pay.html" id="total"></a>
+      </div>
+    </main>
     <script type="module" src="/cart.js"></script>
+    <script type="module" src="/card.js"></script>
   </body>
 </html>

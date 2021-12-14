@@ -1,6 +1,16 @@
 import "./scss/style.scss";
 
 document.querySelector("#helpcircle").addEventListener("click", randomTable);
+document.querySelector("#helpcircle").addEventListener("click", () => {
+  document.querySelector("#helpcircle").classList.add("fadeOut");
+  document.querySelector("#helpcircle").addEventListener("animationend", () => {
+    document.querySelector(".pressBtnTxt").classList.add("hide");
+    document.querySelector(".pressBtnTxt").style.display = "none";
+    document.querySelector(".waitMessage").classList.remove("hide");
+    document.querySelector(".lds-ripple").classList.add("fadeIn");
+    document.querySelector("#helpcircle").style.display = "none";
+  });
+});
 
 function randomTable() {
   const data = { tableid: Math.floor(Math.random() * 10) + 1 };
@@ -28,3 +38,4 @@ toggle.addEventListener("click", () => {
   onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
   onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
 });
+document.body.style.display = "block";

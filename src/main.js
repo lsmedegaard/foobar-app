@@ -123,9 +123,6 @@ if (!cart) {
 //   console.log(cart)
 // }
 
-document.body.style.display = "block";
-//https://stackoverflow.com/questions/4172281/force-browsers-to-load-css-before-showing-the-page
-
 const toggle = document.querySelector(".toggle input");
 var element = document.body;
 
@@ -143,3 +140,5 @@ toggle.addEventListener("click", () => {
   element.classList.add("dark-mode");
 }
  */
+document.body.style.display = "block";
+//https://stackoverflow.com/questions/4172281/force-browsers-to-load-css-before-showing-the-page
