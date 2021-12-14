@@ -98,6 +98,7 @@ document.querySelector(".card").addEventListener("click", () => {
   document.querySelector(".card_container").style.display = "block";
   document.querySelector('form').classList.remove('hide')
   document.querySelector('.card').style.display = "none";
+  document.querySelector('.payment_container h1').style.display = "none";
 });
 document.querySelector(".mp").addEventListener("click", () => {
   document.querySelector(".card").style.display = "none";
@@ -106,7 +107,9 @@ document.querySelector(".mp").addEventListener("click", () => {
 document.querySelector(".cash").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";
   document.querySelector(".card").style.display = "none";
-  document.querySelector(".cash-response").textContent = "Please go to the bar with your table nummer and pay";
+  document.querySelector(".cash_response").textContent = "Please go to the bar with your table nummer and pay";
+  document.querySelector('.payment_container h1').style.display = "none";
+
 });
 
 document.body.style.display = "block";
