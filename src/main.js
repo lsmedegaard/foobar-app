@@ -86,11 +86,6 @@ function displayBeer(beer) {
     localStorage.setItem("cart", JSON.stringify(cart));
     totalSum.textContent = total + " " + "kr" + " " + "pay";
   });
-  if (totalSum === 0) {
-    document.querySelector('#total') = "Choose some beers first";
-  } else {
-    totalSum.textContent = total + " " + "kr" + " " + "pay";
-  }
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);
