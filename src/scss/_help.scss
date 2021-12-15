@@ -1,24 +1,23 @@
-@use "/scss/config.scss"as v;
+@use "/scss/config.scss" as v;
 @use "/scss/classes.scss";
+@use "/scss/menu.scss";
 @import "/scss/mixins.scss";
 
 @function color($color-name) {
   @return map-get(v.$colors, $color-name);
 }
 
-
-
 #helpme,
 #instructions {
   text-align: center;
   margin-top: 10vh;
-height: 40vw;
+  height: 40vw;
 
   #helpwrapper {
     margin-bottom: 5vw;
   }
   #helpcircle {
-    background-color: #26b9b9;;
+    background-color: #26b9b9;
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -43,19 +42,19 @@ height: 40vw;
   height: 80px;
   transform: scale(0);
   margin-top: 5vw;
-    div {
+  div {
     position: absolute;
-    border: 2px solid #26b9b9b7;;
+    border: 2px solid #26b9b9b7;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
     &:nth-child(2) {
       animation-delay: -0.1s;
-      border: 1px solid #26b9b970;;
+      border: 1px solid #26b9b970;
     }
     &:last-child {
-      animation-delay: .1s;
-      border: 3px solid #26b9b9;;
+      animation-delay: 0.1s;
+      border: 3px solid #26b9b9;
     }
   }
 }
@@ -67,9 +66,9 @@ height: 40vw;
     height: 0;
     opacity: 0;
   }
-  10%{
-  opacity: 1;
-}
+  10% {
+    opacity: 1;
+  }
   100% {
     top: 0px;
     left: 0px;
@@ -78,8 +77,3 @@ height: 40vw;
     opacity: 0;
   }
 }
-
-
-
-
-

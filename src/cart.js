@@ -1,8 +1,9 @@
 import "./scss/cart.scss";
 import "./scss/style.scss";
+import "./toggle.js";
 
 import beers from "./beers.js";
-import cart from './cartObject.js'
+import cart from "./cartObject.js";
 
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -71,17 +72,6 @@ function displaybeer() {
   });
 }
 document.body.style.display = "block";
-
-const toggle = document.querySelector(".toggle input");
-var element = document.body;
-
-toggle.addEventListener("click", () => {
-  const onOff = toggle.parentNode.querySelector(".onoff");
-
-  onOff.textContent = toggle.checked ? "Lightmode" : "Darkmode";
-  onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
-  onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
-});
 
 document.querySelector(".card").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";

@@ -1,14 +1,12 @@
 import "./scss/style.scss";
-import cart from './cartObject.js'
+import cart from "./cartObject.js";
+import "./toggle.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   // get();
 });
 
 import beers from "./beers.js";
-
-const tableURL = "https://foobar-cc0c.restdb.io/rest/foobar";
-const tableAPI = "7d223e20e3acb3ae5dda5fa92caf738b8c540";
 
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -50,8 +48,8 @@ function handleBeers() {
 
 function displayBeer(beer) {
   let total = 0;
-  const template = document.querySelector("template")
-  if (!template) return null
+  const template = document.querySelector("template");
+  if (!template) return null;
 
   const clone = template.content.cloneNode(true);
 
@@ -97,17 +95,6 @@ function displayBeer(beer) {
 //   let item = event.target.getAttribute('data-name')
 //   console.log(cart)
 // }
-
-const toggle = document.querySelector(".toggle input");
-var element = document.body;
-
-toggle.addEventListener("click", () => {
-  const onOff = toggle.parentNode.querySelector(".onoff");
-
-  onOff.textContent = toggle.checked ? "Lightmode" : "Darkmode";
-  onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
-  onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
-});
 
 /* function myToggle() {
   var element = document.body;

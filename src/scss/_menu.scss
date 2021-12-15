@@ -152,6 +152,7 @@
   /* position: fixed; */
   padding: 1vw;
   z-index: 50;
+  width: 200px;
 
   .onoff {
     color: color(red_header);
@@ -183,7 +184,7 @@
     cursor: pointer;
     background-color: #fd695e;
     transition: 0.4s;
-    width: 100px;
+    max-width: 100px;
     height: 30px;
     &:before {
       content: "";
@@ -250,6 +251,7 @@
 
   .slider:before {
     background-color: color(light_text);
+    left: 45px;
   }
 
   .price {

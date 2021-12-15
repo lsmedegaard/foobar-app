@@ -1,4 +1,5 @@
 import "./scss/style.scss";
+import "./toggle.js";
 
 document.querySelector("#helpcircle").addEventListener("click", randomTable);
 document.querySelector("#helpcircle").addEventListener("click", () => {
@@ -27,15 +28,4 @@ function randomTable() {
     .then((res) => res.json())
     .then((data) => console.log(`Table ${postData} added`));
 }
-
-const toggle = document.querySelector(".toggle input");
-var element = document.body;
-
-toggle.addEventListener("click", () => {
-  const onOff = toggle.parentNode.querySelector(".onoff");
-
-  onOff.textContent = toggle.checked ? "Lightmode" : "Darkmode";
-  onOff.textcontent.style = toggle.checked = element.classList.toggle("light-mode");
-  onOff.textcontent.style = toggle.unchecked = element.classList.toggle("dark-mode");
-});
 document.body.style.display = "block";
