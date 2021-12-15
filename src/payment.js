@@ -1,6 +1,6 @@
 import "card/dist/card";
 
-const card = new Card({
+new Card({
   form: "form",
   container: ".card_container",
 });
