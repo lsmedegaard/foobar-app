@@ -152,7 +152,7 @@
   /* position: fixed; */
   padding: 1vw;
   z-index: 50;
-  
+
   .onoff {
     color: color(red_header);
     font-size: 1.5em;
@@ -170,12 +170,12 @@
       background-color: color(dark_background);
       box-shadow: 0 0 12px color(dark_background);
     }
-    
+
     &:checked + .slider:before {
       transform: translateX(40px);
     }
   }
-  
+
   .slider {
     position: relative;
     margin-left: 1vw;
@@ -195,7 +195,6 @@
       top: 5px;
       left: 5px;
     }
-
   }
   .round {
     border-radius: 10px;
@@ -229,9 +228,26 @@
   h2,
   h3,
   h4,
+  .beers_container .item-wrapper .beertxt #add,
+  .beers_container .item-wrapper .beertxt #remove,
+  .beers_container .item-wrapper .beertxt .beer_name,
+  .toggle .onoff,
   p {
     color: color(dark_background);
   }
+  .beers_container .item-wrapper .beertxt #add,
+  .beers_container .item-wrapper .beertxt #remove {
+    border: 1px solid color(dark_background);
+  }
+  .order_button,
+  .total_container a,
+  .container button,
+  #back_wrapper #back,
+  .total_sum_container #total_sum {
+    border: 1px solid color(dark_background);
+    color: color(dark_background);
+  }
+
   .slider:before {
     background-color: color(light_text);
   }
@@ -240,15 +256,15 @@
     color: color(dark_background);
   }
 
-  .menu-btn__burger{
+  .menu-btn__burger {
     background: color(dark_background);
-    .open{
+    .open {
       background: transparent;
     }
-    &::before{
+    &::before {
       background: color(dark_background);
     }
-    &::after{
+    &::after {
       background: color(dark_background);
     }
   }

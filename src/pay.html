@@ -54,23 +54,45 @@
       <div class="icon_container">
         <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="" />
         <img class="mp" src="/assets/images/mp.svg" alt="" />
-        <img class="cash" src="/assets/images/money.svg" alt="" />
+        <img class="cash" src="/assets/images/cash.svg" alt="" />
         <p class="cash_response"></p>
       </div>
     </div>
     <div class="card_container">
     </div>
-    <form class="hide">
-      <input id="number" type="text" name="number"  placeholder="13-16 digit cardnumber" pattern='/^([0-9]{4}( |\-)){3}[0-4]{4}$/' required/>
-      <input id="name" type="text" name="name"  autocomplete="name" placeholder="Name on card" required/>
-      <input id="expiry" type="text" name="expiry" placeholder="expiration date-00/0000" required />
-      <input id="cvc" type="text" name="cvc" placeholder="CVC" required />
-      <div class="submit_container">
-        <button id="submit">Pay</button>
+    <form id="payment_form" class="hide">
+      <div id="form_container">
+      <div id="left">
+      <div id="number">
+        <input type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
+        <span id="error_number"></span>
       </div>
-    </form>
-    <div class="thanks">
+      <div id="expiry">
+        <input type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{4}$" required />
+        <span id='error_exp'></span>
+      </div>
     </div>
+    <div id="right">
+      <div id="name">
+        <input type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
+        <span id="error_name"></span>
+      </div>
+      <div id="cvc">
+        <input type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
+        <span id='error_cvc'></span>
+      </div>
+    </div>
+  </div>
+  <div class="submit_container">
+    <button type="button" id="submit">Pay</button>
+  </div>
+    </form>
+    
+    
+    <div class="scan_container">
+      <div class="scan"></div>
+    </div>
+    <div class="qr_container"></div>
 
     <div id="back_wrapper">
       <button id="back" onclick="history.back()">Go Back</button>

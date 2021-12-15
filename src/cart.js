@@ -92,8 +92,14 @@ document.querySelector(".card").addEventListener("click", () => {
   document.querySelector(".payment_container h1").style.display = "none";
 });
 document.querySelector(".mp").addEventListener("click", () => {
+  document.querySelector(".mp").style.display = "none";
+  document.querySelector(".scan").textContent = "Scan this qr code to proceed";
+  const image = document.createElement("img");
+  image.src = "/assets/images/qr_img.png";
+  document.querySelector(".qr_container").appendChild(image);
   document.querySelector(".card").style.display = "none";
   document.querySelector(".cash").style.display = "none";
+  document.querySelector(".payment_container h1").style.display = "none";
 });
 document.querySelector(".cash").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";
