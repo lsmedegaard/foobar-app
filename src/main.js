@@ -1,4 +1,5 @@
 import "./scss/style.scss";
+import cart from './cartObject.js'
 
 window.addEventListener("DOMContentLoaded", () => {
   // get();
@@ -37,8 +38,6 @@ function toggleMenu() {
   }
 }
 
-let cart = JSON.parse(localStorage.getItem("cart"));
-
 handleBeers();
 
 //create array of beers with properies
@@ -51,7 +50,10 @@ function handleBeers() {
 
 function displayBeer(beer) {
   let total = 0;
-  const clone = document.querySelector("template").content.cloneNode(true);
+  const template = document.querySelector("template")
+  if (!template) return null
+
+  const clone = template.content.cloneNode(true);
 
   const beerName = clone.querySelector(".beer_name");
   const thePrice = clone.querySelector(".price");
@@ -86,19 +88,9 @@ function displayBeer(beer) {
     localStorage.setItem("cart", JSON.stringify(cart));
     totalSum.textContent = total + " " + "kr" + " " + "pay";
   });
-  if (totalSum === 0) {
-    document.querySelector('#total') = "Choose some beers first";
-  } else {
-    totalSum.textContent = total + " " + "kr" + " " + "pay";
-  }
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);
-}
-
-if (!cart) {
-  cart = {};
-  beers.forEach((beer) => (cart[beer.name] = 0));
 }
 
 // function removeFromCart(event) {

@@ -2,6 +2,7 @@ import "./scss/cart.scss";
 import "./scss/style.scss";
 
 import beers from "./beers.js";
+import cart from './cartObject.js'
 
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -32,7 +33,6 @@ function toggleMenu() {
 }
 
 function displaybeer() {
-  let cart = JSON.parse(localStorage.getItem("cart"));
   let total = 0;
 
   beers.forEach((beer) => {
