@@ -9,43 +9,6 @@ import beers from "./beers.js";
 const tableURL = "https://foobar-cc0c.restdb.io/rest/foobar";
 const tableAPI = "7d223e20e3acb3ae5dda5fa92caf738b8c540";
 
-/* function get() {
-  fetch(tableURL, {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": tableAPI,
-      "cache-control": "no-cache",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    });
-} */
-/* 
-function randomTable() {
-  let randTable = Math.floor(Math.random() * 10) + 1;
-  console.log(`Table nr: ${randTable}`);
-  document.querySelector("#helpcircle").addEventListener("click", () => {
-    // Post current table number to restdb
-    const postData = JSON.stringify(randTable);
-    fetch(tableURL, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": tableAPI,
-        "cache-control": "no-cache",
-      },
-      body: postData,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        get();
-      });
-  });
-  } */
-
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
 const nav = document.querySelector(".nav");
@@ -87,27 +50,47 @@ function handleBeers() {
 }
 
 function displayBeer(beer) {
-  // create clone
+  let total = 0;
   const clone = document.querySelector("template").content.cloneNode(true);
-  // set clone data
+
+  const beerName = clone.querySelector(".beer_name");
+  const thePrice = clone.querySelector(".price");
+  const price = beer.price * cart[beer.name];
+  total += price;
+  clone.querySelector(".price").textContent = price + "kr";
+  const totalSum = document.querySelector("#total_sum");
+
   clone.querySelector("img").src = beer.img;
-  clone.querySelector(".beer_name").textContent = beer.name;
+  beerName.textContent = beer.name;
   clone.querySelector(".beer_type").textContent = beer.type;
-  clone.querySelector(".price").textContent = beer.price + "kr";
-  // clone.querySelector('.quantity').textContent = JSON.parse(localStorage.getItem('cart'));
+  thePrice.textContent = beer.price + "kr";
+
   const quantity = clone.querySelector(".quantity");
 
   clone.querySelector("#remove").addEventListener("click", () => {
-    cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
+    if (cart[beer.name] === 0) cart[beer.name] = 0;
+    else {
+      cart[beer.name] = cart[beer.name] - 1;
+      total -= beer.price;
+      totalSum.textContent = total + " " + "kr" + " " + "pay";
+    }
+    // cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
     quantity.textContent = " " + "x" + cart[beer.name];
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
   clone.querySelector("#add").addEventListener("click", () => {
     cart[beer.name] = cart[beer.name] + 1;
+    total += beer.price;
     quantity.textContent = "x" + cart[beer.name];
     localStorage.setItem("cart", JSON.stringify(cart));
+    totalSum.textContent = total + " " + "kr" + " " + "pay";
   });
+  if (totalSum === 0) {
+    document.querySelector('#total') = "Choose some beers first";
+  } else {
+    totalSum.textContent = total + " " + "kr" + " " + "pay";
+  }
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);

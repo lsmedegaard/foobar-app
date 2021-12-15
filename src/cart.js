@@ -36,23 +36,17 @@ function displaybeer() {
   let total = 0;
 
   beers.forEach((beer) => {
-    // clone.querySelector("").textContent = "";
+    if (cart[beer.name] === 0) {
+      return null;
+    }
     const clone = document.querySelector("template").content.cloneNode(true);
-
     const beerName = clone.querySelector(".beer_name");
     const thePrice = clone.querySelector(".price");
-
-    // clone.querySelector(".beer_name").textContent = cart[beer.name] + " " + "glasses" + " " + "of" + " " + beer.name;
-
     const price = beer.price * cart[beer.name];
     total += price;
-
     clone.querySelector(".price").textContent = price + "kr";
-    // clone.querySelector("total").textContent = price;
     const totalSum = document.querySelector("#total");
-
     beerName.textContent = cart[beer.name] + " " + "x" + " " + beer.name;
-
     clone.querySelector("#remove").addEventListener("click", () => {
       if (cart[beer.name] === 0) cart[beer.name] = 0;
       else {
@@ -64,7 +58,6 @@ function displaybeer() {
       beerName.textContent = cart[beer.name] + " " + "x" + " " + beer.name;
       totalSum.textContent = total + " " + "kr" + " " + "pay";
     });
-
     clone.querySelector("#add").addEventListener("click", () => {
       cart[beer.name] = cart[beer.name] + 1;
       total += beer.price;
@@ -73,9 +66,7 @@ function displaybeer() {
       beerName.textContent = cart[beer.name] + " " + "x" + " " + beer.name;
       totalSum.textContent = total + " " + "kr" + " " + "pay";
     });
-
     totalSum.textContent = total + " " + "kr" + " " + "pay";
-
     document.querySelector(".order_list").appendChild(clone);
   });
 }
@@ -96,9 +87,9 @@ document.querySelector(".card").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";
   document.querySelector(".cash").style.display = "none";
   document.querySelector(".card_container").style.display = "block";
-  document.querySelector('form').classList.remove('hide')
-  document.querySelector('.card').style.display = "none";
-  document.querySelector('.payment_container h1').style.display = "none";
+  document.querySelector("form").classList.remove("hide");
+  document.querySelector(".card").style.display = "none";
+  document.querySelector(".payment_container h1").style.display = "none";
 });
 document.querySelector(".mp").addEventListener("click", () => {
   document.querySelector(".card").style.display = "none";
@@ -108,8 +99,7 @@ document.querySelector(".cash").addEventListener("click", () => {
   document.querySelector(".mp").style.display = "none";
   document.querySelector(".card").style.display = "none";
   document.querySelector(".cash_response").textContent = "Please go to the bar with your table nummer and pay";
-  document.querySelector('.payment_container h1').style.display = "none";
-
+  document.querySelector(".payment_container h1").style.display = "none";
 });
 
 document.body.style.display = "block";

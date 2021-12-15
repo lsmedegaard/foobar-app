@@ -111,10 +111,10 @@ p {
     height: 40vw;
 
     @include for-phone-only {
-      height: 50vw;
+      height: 60vw;
     }
-    @include for-tablet-landscape-up {
-      height: 30vw;
+    @include for-tablet-portrait-up {
+      height: 35vw;
     }
 
     .img-wrapper {
@@ -125,8 +125,8 @@ p {
         height: 20vw;
 
         @include for-phone-only {
-          height: 25vw;
-          width: 25vw;
+          height: 35vw;
+          width: 35vw;
         }
       }
     }
@@ -149,7 +149,7 @@ p {
           font-size: 1.4rem;
         }
         @include for-phone-only {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
       }
 
@@ -168,37 +168,23 @@ p {
       #add {
         grid-area: button;
         @include buttons();
+        @include for-phone-only {
+        }
       }
       #remove {
         grid-area: re;
         @include buttons();
+        @include for-phone-only {
+        }
       }
     }
   }
 }
 
-
-
-// #testsection{
-//   display: grid;
-// }
-
-// .test-wrapper1,
-// .test-wrapper2,
-// .test-wrapper3{
-// @include flexCenter();
-//   img{
-//   position: relative;
-//   }
-//   .beer_label{
-//   width: 25vw;
-//   height: auto;
-//   left: 7vw;
-//   }
-//   .pilsner{
-//   width: 29vw;
-//   height: auto;
-//   top: 3vw;
-//   left: -6vw;
-//   }
-// }
+.total_sum_container {
+  margin-bottom: 10vw;
+  @include flexCenter();
+  #total_sum {
+    @include buttons();
+  }
+}
