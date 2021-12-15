@@ -1,4 +1,5 @@
 import "./scss/style.scss";
+import cart from './cartObject.js'
 
 window.addEventListener("DOMContentLoaded", () => {
   // get();
@@ -36,8 +37,6 @@ function toggleMenu() {
     showMenu = false;
   }
 }
-
-let cart = JSON.parse(localStorage.getItem("cart"));
 
 handleBeers();
 
@@ -89,11 +88,6 @@ function displayBeer(beer) {
 
   // append clone to list
   document.querySelector(".beers_container ul").appendChild(clone);
-}
-
-if (!cart) {
-  cart = {};
-  beers.forEach((beer) => (cart[beer.name] = 0));
 }
 
 // function removeFromCart(event) {
