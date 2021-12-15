@@ -50,7 +50,10 @@ function handleBeers() {
 
 function displayBeer(beer) {
   let total = 0;
-  const clone = document.querySelector("template").content.cloneNode(true);
+  const template = document.querySelector("template")
+  if (!template) return null
+
+  const clone = template.content.cloneNode(true);
 
   const beerName = clone.querySelector(".beer_name");
   const thePrice = clone.querySelector(".price");
