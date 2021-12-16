@@ -75,28 +75,27 @@ function displaybeer() {
 }
 document.body.style.display = "block";
 
+function hidePaymentOptions() {
+  document.querySelectorAll(".icon_container div").forEach((div) => (div.style.display = "none"));
+}
+
 document.querySelector(".card").addEventListener("click", () => {
-  document.querySelector(".mp").style.display = "none";
-  document.querySelector(".cash").style.display = "none";
+  hidePaymentOptions();
   document.querySelector(".card_container").style.display = "block";
   document.querySelector("form").classList.remove("hide");
-  document.querySelector(".card").style.display = "none";
   document.querySelector(".payment_container h1").style.display = "none";
 });
 document.querySelector(".mp").addEventListener("click", () => {
-  document.querySelector(".mp").style.display = "none";
+  hidePaymentOptions();
   document.querySelector(".scan").textContent = "Scan this qr code to proceed";
   const image = document.createElement("img");
   image.src = "/assets/images/qr_img.png";
   document.querySelector(".qr_container").appendChild(image);
-  document.querySelector(".card").style.display = "none";
-  document.querySelector(".cash").style.display = "none";
   document.querySelector(".payment_container h1").style.display = "none";
 });
 document.querySelector(".cash").addEventListener("click", () => {
-  document.querySelector(".mp").style.display = "none";
-  document.querySelector(".card").style.display = "none";
-  document.querySelector(".cash_response").textContent = "Please go to the bar with your table nummer and pay";
+  hidePaymentOptions();
+  document.querySelector(".cash_response").textContent = "Thanks for ordering! Please proceed to the bar and  Your table number is: " + Math.ceil(Math.random() * 10);
   document.querySelector(".payment_container h1").style.display = "none";
 });
 
