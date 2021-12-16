@@ -11,12 +11,11 @@ document.body.style.display = "block";
 
 document.querySelector("#submit").addEventListener("click", function () {
   document.querySelectorAll("#payment_form span").forEach((span) => (span.textContent = null));
+
   const validate = validatePayment();
   if (!validate) return null;
-  this.addEventListener("click", () => {
-    const newUrl = "/payment_accepted.html";
-    document.location.href = newUrl;
-  });
+  const newUrl = "/payment_accepted.html";
+  document.location.href = newUrl;
 });
 
 function validatePayment() {
@@ -32,10 +31,13 @@ function validatePayment() {
     expiry: "Not a valid expiration date",
     cvc: "Not a valid cvc",
   };
+
   const inputs = document.querySelectorAll("#payment_form input");
   for (const input of inputs) {
     const pattern = patterns[input.name];
+
     const test = pattern.test(input.value);
+
     if (!test) {
       document.querySelector("#" + input.name + " span").textContent = errorMessage[input.name];
       return false;
