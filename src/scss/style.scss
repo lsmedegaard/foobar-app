@@ -189,3 +189,9 @@ p {
     @include buttons();
   }
 }
+.light-mode .icon_container div {
+  background: linear-gradient(135deg, rgb(255, 255, 255), 12%, rgb(26, 33, 41));
+}
+.light-mode .toggle .slider {
+  background-color: rgb(26, 33, 41);
+}
