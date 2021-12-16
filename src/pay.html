@@ -51,9 +51,9 @@
     <div class="payment_container">
       <h1>Choose a payment type</h1>
       <div class="icon_container">
-        <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="" />
-        <img class="mp" src="/assets/images/mp.svg" alt="" />
-        <img class="cash" src="/assets/images/cash.svg" alt="" />
+        <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="Card" />
+        <img class="mp" src="/assets/images/mp.svg" alt="Mobilepay" />
+        <img class="cash" src="/assets/images/cash.svg" alt="Cash" />
         <p class="cash_response"></p>
       </div>
     </div>
@@ -68,7 +68,7 @@
         <span id="error_number"></span>
       </div>
       <div id="expiry">
-        <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{4}$" required />
+        <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{2}$" required />
         <label for="exp"></label>
         <span id='error_exp'></span>
       </div>
