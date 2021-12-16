@@ -64,21 +64,25 @@
       <div id="form_container">
       <div id="left">
       <div id="number">
-        <input type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
+        <input id="cardNumber" type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
+        <label for="cardNumber"></label>
         <span id="error_number"></span>
       </div>
       <div id="expiry">
-        <input type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{4}$" required />
+        <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{4}$" required />
+        <label for="exp"></label>
         <span id='error_exp'></span>
       </div>
     </div>
     <div id="right">
       <div id="name">
-        <input type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
+        <input id="cardName" type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
+        <label for="cardName"></label>
         <span id="error_name"></span>
       </div>
       <div id="cvc">
-        <input type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
+        <input id="theCVC" type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
+        <label for="theCVC"></label>
         <span id='error_cvc'></span>
       </div>
     </div>
