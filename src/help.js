@@ -18,11 +18,11 @@ document.querySelector("#helpcircle").addEventListener("click", () => {
 function randomTable() {
   const data = { tableid: Math.floor(Math.random() * 10) + 1 };
   const postData = JSON.stringify(data);
-  fetch("https://foobar-cc0c.restdb.io/rest/foobar", {
+  fetch("https://lasselasse-7343.restdb.io/rest/foobar", {
     method: "post",
     headers: {
-      // "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "61b71e3fa3fedd557f8e0abd",
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "15e3615a84472199f3f9297d98a2f36c8f384",
       "cache-control": "no-cache",
     },
     body: postData,
