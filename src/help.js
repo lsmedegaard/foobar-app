@@ -1,3 +1,5 @@
+"use strict";
+
 import "./scss/style.scss";
 import "./toggle.js";
 

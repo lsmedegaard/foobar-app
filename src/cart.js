@@ -1,3 +1,5 @@
+"use strict";
+
 import "./scss/cart.scss";
 import "./scss/style.scss";
 import "./toggle.js";

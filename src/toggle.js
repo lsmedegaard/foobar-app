@@ -1,3 +1,5 @@
+"use strict";
+
 const toggle = document.querySelector(".toggle");
 let element = document.body;
 let checked = false;
