@@ -21,7 +21,7 @@ function randomTable() {
   fetch("https://foobar-cc0c.restdb.io/rest/foobar", {
     method: "post",
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
+      // "Content-Type": "application/json; charset=utf-8",
       "x-apikey": "61b71e3fa3fedd557f8e0abd",
       "cache-control": "no-cache",
     },
