@@ -72,7 +72,13 @@ function displaybeer() {
     totalSum.textContent = total + " " + "kr" + " " + "pay";
     document.querySelector(".order_list").appendChild(clone);
   });
+  if (!total) {
+    const totalButton = document.querySelector("#total")
+    totalButton.setAttribute('href', '/')
+    totalButton.textContent = 'Gå til bestilling'
+  }
 }
+
 document.body.style.display = "block";
 
 function hidePaymentOptions() {
@@ -100,3 +106,8 @@ document.querySelector(".cash").addEventListener("click", () => {
 });
 
 document.body.style.display = "block";
+
+//Ændring
+setTimeout(() => {
+  document.querySelectorAll('.icon_container div').forEach(div => div.classList.add('visible'))
+}, 1)

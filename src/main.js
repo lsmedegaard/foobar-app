@@ -77,6 +77,7 @@ function displayBeer(beer) {
     }
     // cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
     quantity.textContent = " " + "x" + cart[beer.name];
+    quantity.appendChild(document.createElement('div'))
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
@@ -84,6 +85,7 @@ function displayBeer(beer) {
     cart[beer.name] = cart[beer.name] + 1;
     total += beer.price;
     quantity.textContent = "x" + cart[beer.name];
+    quantity.appendChild(document.createElement('div'))
     localStorage.setItem("cart", JSON.stringify(cart));
     totalSum.textContent = total + " " + "kr" + " " + "pay";
   });

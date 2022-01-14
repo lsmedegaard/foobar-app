@@ -8,18 +8,20 @@
   @return map-get(v.$colors, $color-name);
 }
 
+#cart-main {
+  width: 80vw;
+  margin: 0 auto;
+}
+
 h3 {
   color: color(red_header);
   font-family: v.$lemonMilk;
-  margin-left: 6vw;
 }
 
 .order_list {
   height: auto;
-  width: 70vw;
   display: flex;
   flex-direction: column;
-  margin-left: 6vw;
 }
 
 .container {
@@ -82,6 +84,17 @@ h3 {
       align-items: center;
       aspect-ratio: 1;
       margin-bottom: 4vw;
+      transition: 2s transform;
+      transform: translate(-300%, 0);
+
+      &:nth-child(2) {
+        transform: translate(300%, 0);
+      }
+
+      &.visible {
+        width: 27vw;
+        transform: translate(0, 0);
+      }
 
       img {
         width: 45%;
