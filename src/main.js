@@ -4,10 +4,6 @@ import "./scss/style.scss";
 import cart from "./cartObject.js";
 import "./toggle.js";
 
-window.addEventListener("DOMContentLoaded", () => {
-  // get();
-});
-
 import beers from "./beers.js";
 
 const menuBtn = document.querySelector(".menu-btn");
@@ -39,13 +35,34 @@ function toggleMenu() {
 }
 
 handleBeers();
+//Change
+// setTimeout(() => {
+//   document.querySelectorAll('.beers_container ul article').forEach(article => article.classList.add('visible'))
+// }, 1)
 
 //create array of beers with properies
+
+function observeBeers() {
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible')
+    })
+  }
+  const observerOptions = {
+    rootMargin: '0px 5000px',
+    threshold: 0
+  }
+  const observer = new IntersectionObserver(observerCallback, observerOptions)
+  const elements = document.querySelectorAll('.beers_container > ul > article')
+  elements.forEach(element => observer.observe(element))
+}
+
 //display each beer - "displayBeer(beer)"
 function handleBeers() {
   beers.forEach((beer) => {
     displayBeer(beer);
   });
+  observeBeers()
 }
 
 function displayBeer(beer) {
@@ -68,7 +85,7 @@ function displayBeer(beer) {
   thePrice.textContent = beer.price + "kr";
   const quantity = clone.querySelector(".quantity");
 
-  clone.querySelector("#remove").addEventListener("click", () => {
+  clone.querySelector(".remove").addEventListener("click", () => {
     if (cart[beer.name] === 0) cart[beer.name] = 0;
     else {
       cart[beer.name] = cart[beer.name] - 1;
@@ -81,7 +98,7 @@ function displayBeer(beer) {
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
-  clone.querySelector("#add").addEventListener("click", () => {
+  clone.querySelector(".add").addEventListener("click", () => {
     cart[beer.name] = cart[beer.name] + 1;
     total += beer.price;
     quantity.textContent = "x" + cart[beer.name];

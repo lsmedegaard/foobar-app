@@ -228,15 +228,15 @@
   h2,
   h3,
   h4,
-  .beers_container .item-wrapper .beertxt #add,
-  .beers_container .item-wrapper .beertxt #remove,
+  .beers_container .item-wrapper .beertxt .add,
+  .beers_container .item-wrapper .beertxt .remove,
   .beers_container .item-wrapper .beertxt .beer_name,
   .toggle .onoff,
   p {
     color: color(dark_background);
   }
-  .beers_container .item-wrapper .beertxt #add,
-  .beers_container .item-wrapper .beertxt #remove {
+  .beers_container .item-wrapper .beertxt .add,
+  .beers_container .item-wrapper .beertxt .remove {
     border: 1px solid color(dark_background);
   }
   .order_button,

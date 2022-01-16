@@ -43,6 +43,7 @@ function displaybeer() {
       return null;
     }
     const clone = document.querySelector("template").content.cloneNode(true);
+    console.log('clone', clone)
     const beerName = clone.querySelector(".beer_name");
     const thePrice = clone.querySelector(".price");
     const price = beer.price * cart[beer.name];
@@ -50,7 +51,7 @@ function displaybeer() {
     clone.querySelector(".price").textContent = price + "kr";
     const totalSum = document.querySelector("#total");
     beerName.textContent = cart[beer.name] + " " + "x" + " " + beer.name;
-    clone.querySelector("#remove").addEventListener("click", () => {
+    clone.querySelector(".remove").addEventListener("click", () => {
       if (cart[beer.name] === 0) cart[beer.name] = 0;
       else {
         cart[beer.name] = cart[beer.name] - 1;
@@ -61,7 +62,7 @@ function displaybeer() {
       beerName.textContent = cart[beer.name] + " " + "x" + " " + beer.name;
       totalSum.textContent = total + " " + "kr" + " " + "pay";
     });
-    clone.querySelector("#add").addEventListener("click", () => {
+    clone.querySelector(".add").addEventListener("click", () => {
       cart[beer.name] = cart[beer.name] + 1;
       total += beer.price;
       thePrice.textContent = beer.price * cart[beer.name] + "kr";
