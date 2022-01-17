@@ -41,71 +41,73 @@
       </nav>
     </header>
 
-    <div class="logo">
-      <h1 class="title">
-        FOO BAR
-        <div class="firstfade">FOO BAR</div>
-        <div class="lastfade">FOO BAR</div>
-      </h1>
-    </div>
-    <div class="payment_container">
-      <h1>Choose a payment type</h1>
-      <div class="icon_container">
-        <div>
-         <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="Card" />  
+    <main>
+      <div class="logo">
+        <h1 class="title">
+          FOO BAR
+          <div class="firstfade">FOO BAR</div>
+          <div class="lastfade">FOO BAR</div>
+        </h1>
+      </div>
+      <div class="payment_container">
+        <h1>Choose a payment type</h1>
+        <div class="icon_container">
+          <div>
+           <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="Card" />  
+          </div>
+          <div>
+           <img class="mp" src="/assets/images/mp.svg" alt="Mobilepay" />
+          </div>
+          <div>
+            <img class="cash" src="/assets/images/cash.svg" alt="Cash" />
+          </div>
+          <p class="cash_response"></p>
         </div>
-        <div>
-         <img class="mp" src="/assets/images/mp.svg" alt="Mobilepay" />
+      </div>
+      <div class="card_container">
+      </div>
+      <form id="payment_form" class="hide">
+        <div id="form_container">
+        <div id="left">
+        <div id="number">
+          <input id="cardNumber" type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
+          <label for="cardNumber"></label>
+          <span id="error_number"></span>
         </div>
-        <div>
-          <img class="cash" src="/assets/images/cash.svg" alt="Cash" />
+        <div id="expiry">
+          <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{2}$" required />
+          <label for="exp"></label>
+          <span id='error_exp'></span>
         </div>
-        <p class="cash_response"></p>
+      </div>
+      <div id="right">
+        <div id="name">
+          <input id="cardName" type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
+          <label for="cardName"></label>
+          <span id="error_name"></span>
+        </div>
+        <div id="cvc">
+          <input id="theCVC" type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
+          <label for="theCVC"></label>
+          <span id='error_cvc'></span>
+        </div>
       </div>
     </div>
-    <div class="card_container">
+    <div class="submit_container">
+      <button type="button" id="submit">Pay</button>
     </div>
-    <form id="payment_form" class="hide">
-      <div id="form_container">
-      <div id="left">
-      <div id="number">
-        <input id="cardNumber" type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
-        <label for="cardNumber"></label>
-        <span id="error_number"></span>
+      </form>
+      
+      
+      <div class="scan_container">
+        <div class="scan"></div>
       </div>
-      <div id="expiry">
-        <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{2}$" required />
-        <label for="exp"></label>
-        <span id='error_exp'></span>
+      <div class="qr_container"></div>
+  
+      <div id="back_wrapper">
+        <button id="back" onclick="history.back()">Go Back</button>
       </div>
-    </div>
-    <div id="right">
-      <div id="name">
-        <input id="cardName" type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
-        <label for="cardName"></label>
-        <span id="error_name"></span>
-      </div>
-      <div id="cvc">
-        <input id="theCVC" type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
-        <label for="theCVC"></label>
-        <span id='error_cvc'></span>
-      </div>
-    </div>
-  </div>
-  <div class="submit_container">
-    <button type="button" id="submit">Pay</button>
-  </div>
-    </form>
-    
-    
-    <div class="scan_container">
-      <div class="scan"></div>
-    </div>
-    <div class="qr_container"></div>
-
-    <div id="back_wrapper">
-      <button id="back" onclick="history.back()">Go Back</button>
-    </div>
+    </main>
     <script type="module" src="/cart.js"></script>
     <script type="module" src="/payment.js"></script>
   </body>
