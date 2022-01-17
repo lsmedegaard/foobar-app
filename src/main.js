@@ -34,6 +34,8 @@ function toggleMenu() {
   }
 }
 
+
+let total = 0
 handleBeers();
 //Change
 // setTimeout(() => {
@@ -66,7 +68,6 @@ function handleBeers() {
 }
 
 function displayBeer(beer) {
-  let total = 0;
   const template = document.querySelector("template");
   if (!template) return null;
 
@@ -92,13 +93,13 @@ function displayBeer(beer) {
       total -= beer.price;
       totalSum.textContent = total + " " + "kr" + " " + "pay";
     }
-    // cart[beer.name] === 0 ? (cart[beer.name] = 0) : (cart[beer.name] = cart[beer.name] - 1);
     quantity.textContent = " " + "x" + cart[beer.name];
     quantity.appendChild(document.createElement('div'))
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 
   clone.querySelector(".add").addEventListener("click", () => {
+    console.log('total', total)
     cart[beer.name] = cart[beer.name] + 1;
     total += beer.price;
     quantity.textContent = "x" + cart[beer.name];
@@ -111,16 +112,8 @@ function displayBeer(beer) {
   document.querySelector(".beers_container ul").appendChild(clone);
 }
 
-// function removeFromCart(event) {
-//   let item = event.target.getAttribute('data-name')
-//   console.log(cart)
-// }
 
-/* function myToggle() {
-  var element = document.body;
-  element.classList.add("light-mode");
-  element.classList.add("dark-mode");
-}
- */
+
+
 document.body.style.display = "block";
 //https://stackoverflow.com/questions/4172281/force-browsers-to-load-css-before-showing-the-page

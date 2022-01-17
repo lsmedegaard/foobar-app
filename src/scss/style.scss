@@ -90,6 +90,10 @@ p {
     transform: translate(-400%, 0);
     transition: transform 2s ease-out;
 
+    &:nth-child(even) {
+      transform: translate(300%, 0);
+    }
+
     &.visible {
       transform: translate(0, 0);
     }
