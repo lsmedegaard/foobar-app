@@ -18,6 +18,14 @@ body {
   transition: 1s;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  background-color: color(dark_background);
+  z-index: 999;
+  padding: 15px 5px;
+}
+
 a {
   transition: 0.5s;
   text-decoration: none;

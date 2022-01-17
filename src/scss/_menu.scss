@@ -8,10 +8,12 @@
 
 // MENU
 .menu-btn {
-  position: fixed;
+  //change//
+  position: absolute;
   z-index: 100;
   right: 2rem;
-  top: 2rem;
+  top: 50%;
+  transform: translate(0, -50%);
   height: 20px;
   width: 50px;
   cursor: pointer;
@@ -224,6 +226,10 @@
 .light-mode {
   background-color: color(light_text);
   color: color(dark_background);
+
+  header {
+    background-color: color(light_text);
+  }
   h1,
   h2,
   h3,
