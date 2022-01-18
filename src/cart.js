@@ -76,7 +76,7 @@ function displaybeer() {
   if (!total) {
     const totalButton = document.querySelector("#total")
     totalButton.setAttribute('href', '/')
-    totalButton.textContent = 'Gå til bestilling'
+    totalButton.textContent = 'Go back'
   }
 }
 
