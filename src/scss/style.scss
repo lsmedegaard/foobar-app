@@ -100,7 +100,7 @@ p {
 
   article {
     transform: translate(-400%, 0);
-    transition: transform 2s ease-out;
+    transition: transform 0.6s ease-out;
 
     &:nth-child(even) {
       transform: translate(300%, 0);
@@ -125,8 +125,6 @@ p {
   }
 
   li {
-    /*  height: 15vw;
-    width: 15vw; */
     display: flex;
     flex-wrap: wrap;
   }
